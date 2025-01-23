@@ -6,3 +6,9 @@ lazy val root = (project in file("."))
   .settings(
     name := "AdventOfCode2024"
   )
+root / libraryDependencies ++= Seq(
+  "org.specs2" %% "specs2-core" % "latest.integration" % Test
+)
+root / Test / scalacOptions ++= Seq(
+  "-Yrangepos"
+)
