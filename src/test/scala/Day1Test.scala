@@ -13,10 +13,10 @@ class Day1Test extends Specification {
          case ((l1, l2), line) =>
            val nums = line.split("   ").toList.map(_.toInt)
            val (num1, num2) = (nums(0), nums(1))
-           (l1 :+ num1, l2 :+ num2)
+           (num1 :: l1, num2 :: l2)
        }
 
-       Day1.twoListDistance(list1, list2) mustEqual 2057374
+       Day1.twoListDistance(list1.reverse, list2.reverse) mustEqual 2057374
      }
      finally {
        source.close()
