@@ -6,4 +6,9 @@ object Day1 {
       abs(x - y)
     }.sum
   }
+
+  def similarityScore(list1: List[Int], list2: List[Int]): Int = {
+    val occurrences = list2.groupMapReduce(identity)(_ => 1)(_ + _)
+    list1.map(i => i * occurrences.getOrElse(i, 0)).sum
+  }
 }
