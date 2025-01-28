@@ -12,4 +12,9 @@ object Day2 {
 
     (allIncreasing || allDecreasing) && maxDiffValid
   }
+
+  def isPurelyMonotonicWithMaxDiffAllowRemoval(list: List[Int]): Boolean = {
+    isPurelyMonotonicWithMaxDiff(list) ||
+      list.indices.exists(i => isPurelyMonotonicWithMaxDiff(list.patch(i, Nil, 1)))
+  }
 }
