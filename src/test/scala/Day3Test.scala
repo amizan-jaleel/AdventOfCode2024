@@ -10,8 +10,8 @@ class Day3Test extends Specification {
       }
 
       "reading from a file" >> {
-        val input = scala.io.Source.fromResource("day3.txt").getLines().toList.head
-        Day3.sumValidMultiplications(input) mustEqual 33494469 // not correct
+        val input = scala.io.Source.fromResource("day3.txt").getLines().toList.mkString("")
+        Day3.sumValidMultiplications(input) mustEqual 183788984
       }
     }
   }
